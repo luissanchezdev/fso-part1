@@ -12,7 +12,6 @@ const App = (props) => {
 
   let numVotesMostVoted = Math.max(...votes)
   let mostVoted = 0
-  console.log(numVotesMostVoted)
 
   for (let i = 0; i < votes.length; i++) {
     if (numVotesMostVoted === 0 ) {
@@ -21,8 +20,6 @@ const App = (props) => {
       mostVoted = i
     }
   }
-
-  console.log(anecdotes[0])
   
   const increaseVoteAnecdote = () => {
     const incrementVoteByOne = votes[selected] + 1
@@ -36,7 +33,6 @@ const App = (props) => {
       <div>
         <h2>Anecdote of the day</h2>
         {props.anecdotes[selected]}
-        <p>position : {selected}</p>
         <p>has votes: {votes[selected]} </p>
         <button onClick = {randomAnecdote}>random anecdote</button>
         <button onClick= {increaseVoteAnecdote}>Vote</button>
